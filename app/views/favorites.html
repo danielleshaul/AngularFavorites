@@ -1,0 +1,30 @@
+
+<div class="container" ng-controller="FavoritesController as favCtrl">
+	<h1>Favorites</h1>
+    <ul class="list-group">                
+     <li class="list-group-item" ng-repeat="track in favorites">
+        <div class ="row">
+            <div class="col-md-4">
+                {{ track.name }}
+            </div>
+            <div class="col-md-4">
+                {{ track.comment }}
+            </div>
+            <div class="col-md-4">
+                <p class="input-group">
+                    <span class="badge" ng-repeat="artist in track.artists">
+                        {{ artist.name }}
+                    </span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="addComment(track)">+</button>
+                    </span>
+                     <span></span>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" ng-click="removeFavorite(track)" aria-label="Remove">X</button>
+                    </span>
+                </p>
+            </div>
+        </div>
+     </li>
+    </ul>
+</div>  
